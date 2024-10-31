@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { CssBaseline, Container } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 import Home from './pages/Home';
 import Dashboard from './components/Dashboard';
 import ClaimsList from './components/ClaimsList';
@@ -11,6 +12,7 @@ import AdminPage from './pages/AdminPage';
 import Navbar from './components/Navbar';
 import Notifications from './components/Notifications';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
